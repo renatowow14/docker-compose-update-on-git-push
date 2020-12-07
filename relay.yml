@@ -1,10 +1,18 @@
-version: "v1"
-key: your-secret-key # will be encrypted on startup
-secret: your-secret  # will be encrypted on startup
+version: v1
+key: !!binary |
+  GvUvjSRwT5HL/Y2Bdbcfn1U4+O39HxXCL85faZUb/v+PIfW1770w0NBF9MA+3bSIFHeI8r
+  15Y8Uv5OEiLO/McQ==
+secret: !!binary A1Y7FX616coe/NBC7MX9PHRheG8ZlORWKrnIZOcbqb6JXjHJE+/tqw==
 buckets:
-  - docker-compose-update-on-git-push
+- docker-compose-update-on-git-push
 relayer:
-  type: exec  
-  timeout: 300 # timeout in seconds
+  type: exec
   command: bash
-  commandArgs: [ '/Users/karolis/Projects/docker-compose-update-on-git-push/update.sh' ]
+  commandArgs:
+  - /home/renato/docker-compose-update-on-git-push/update.sh
+  timeout: 300
+enc_type: 1
+client_key: sw56U5+jxXL/2jMD2MTA13DxF5qcCe1TTo2mTp6bzW8JuWnhUwlYZE665zuPS8bLniJCLhf8QCUrltIkhmDZA5rmIe56cGgK
+logs_output: ""
+log_level: ""
+http_proxy: ""
